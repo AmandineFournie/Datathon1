@@ -10,7 +10,6 @@ from PIL import Image
 import streamlit.components.v1 as components
 from streamlit_option_menu import option_menu
 import dash
-import dash_bootstrap_components as dbc
 from streamlit_searchbox import st_searchbox
 from streamlit_elements import elements, mui, html, sync
 import enum
