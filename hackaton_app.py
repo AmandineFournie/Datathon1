@@ -450,13 +450,11 @@ elif selected == '🎶 Recommandations 🎶':
     def search_sth_fast(searchterm: str) -> List[str]:
         if not searchterm:
             return []
-        try:
-            result = df_final.loc[df_final['name'].str.contains(searchterm, case=False, na=False), ['name', 'artists']] \
+           result = df_final.loc[df_final['name'].str.contains(searchterm, case=False, na=False), ['name', 'artists']] \
                 .sort_values(by='popularity', ascending=False).values
-            formatted_result = [f"{name_tuple[0]} par {name_tuple[1][1:-1]}" for name_tuple in result]
-            return formatted_result
-        except KeyError:
-            return []
+           formatted_result = [f"{name_tuple[0]} par {name_tuple[1][1:-1]}" for name_tuple in result]
+           return formatted_result
+
 
     st.write ("N.B. Les recommandations prennent en compte les caractériques musicales d'une chanson.")
     st.write()
