@@ -455,6 +455,8 @@ elif selected == '🎶 Recommandations 🎶':
 
         formatted_result = [f"{name_tuple[0]} par {name_tuple[1][1:-1]}" for name_tuple in result]
         return formatted_result
+       except KeyError:
+        return []
 
     st.write ("N.B. Les recommandations prennent en compte les caractériques musicales d'une chanson.")
     st.write()
