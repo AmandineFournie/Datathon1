@@ -309,7 +309,7 @@ elif selected == '📈 KPI 📈':
                 endpoint = "https://api.spotify.com/v1/audio-features/"
 
                 Feat_df = pd.DataFrame()
-                for id in Track_df['id'].iteritems():
+                for id in Track_df['Id'].iteritems():
                     track_id = id[1]
                     lookup_url = f"{endpoint}{track_id}"
                     ra = requests.get(lookup_url, headers=headers)
