@@ -283,7 +283,7 @@ elif selected == '📈 KPI 📈':
                 from spotipy_client import *
             
 
-                spotify = SpotifyAPI(client_id, client_secret)
+                spotify = SpotifyAPI(st.secrets["client_id"], st.secrets["client_secret"])
 
                     
                 Data = spotify.search({"artist": f"{Name_of_Artist}"}, search_type="track")
@@ -372,7 +372,7 @@ elif selected == '📈 KPI 📈':
                 button_clicked = st.form_submit_button("OK")
 
                 if button_clicked:
-                    spotify = SpotifyAPI(client_id, client_secret)
+                    spotify = SpotifyAPI(st.secrets["client_id"], st.secrets["client_secret"])
                     Data = spotify.search({"artist": f"{Name_of_Artist_2}"}, search_type="track")
                     need = []
                     for i, item in enumerate(Data['tracks']['items']):
