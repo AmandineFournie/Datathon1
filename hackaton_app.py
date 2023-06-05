@@ -283,9 +283,6 @@ elif selected == '📈 KPI 📈':
                 from spotipy_client import *
             
 
-                client_id = '0fb92619fee741a8a40acd3d2a15a628'
-                client_secret = 'c262eac04c954700aabb437530f0af82'
-
                 spotify = SpotifyAPI(client_id, client_secret)
 
                     
@@ -309,7 +306,7 @@ elif selected == '📈 KPI 📈':
                 endpoint = "https://api.spotify.com/v1/audio-features/"
 
                 Feat_df = pd.DataFrame()
-                for id in Track_df['Id'].iteritems():
+                for id in Track_df['Id'].items():
                     track_id = id[1]
                     lookup_url = f"{endpoint}{track_id}"
                     ra = requests.get(lookup_url, headers=headers)
@@ -375,8 +372,6 @@ elif selected == '📈 KPI 📈':
                 button_clicked = st.form_submit_button("OK")
 
                 if button_clicked:
-                    client_id = '0fb92619fee741a8a40acd3d2a15a628'
-                    client_secret = 'c262eac04c954700aabb437530f0af82'
                     spotify = SpotifyAPI(client_id, client_secret)
                     Data = spotify.search({"artist": f"{Name_of_Artist_2}"}, search_type="track")
                     need = []
@@ -391,7 +386,7 @@ elif selected == '📈 KPI 📈':
                     headers = {"Authorization": f"Bearer {access_token}"}
                     endpoint = "https://api.spotify.com/v1/audio-features/"
                     Feat_df = pd.DataFrame()
-                    for id in Track_df['Id'].iteritems():
+                    for id in Track_df['Id'].items():
                         track_id = id[1]
                         lookup_url = f"{endpoint}{track_id}"
                         ra = requests.get(lookup_url, headers=headers)
