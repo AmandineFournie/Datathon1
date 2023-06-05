@@ -312,7 +312,7 @@ elif selected == '📈 KPI 📈':
                     ra = requests.get(lookup_url, headers=headers)
                     audio_feat = ra.json()
                     Features_df = pd.DataFrame(audio_feat, index=[0])
-                    Feat_df = Feat_df.append(Features_df)
+                    Feat_df = pd.concat([Feat_df, Features_df], ignore_index=True)
 
                 Full_Data = Track_df.merge(Feat_df, left_on="Id", right_on="id")
 
