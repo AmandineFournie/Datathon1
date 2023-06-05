@@ -446,7 +446,7 @@ elif selected == '🎶 Recommandations 🎶':
         if not searchterm:
             return []
         result = df_final.loc[df_final['name'].str.contains(searchterm, case=False, na=False), ['name', 'artists']] \
-        .sort_values(by='popularity', ascending=False).values
+        .sort_values(by='name', ascending=False).values
         formatted_result = [f"{name_tuple[0]} par {name_tuple[1][1:-1]}" for name_tuple in result]
         return formatted_result
 
