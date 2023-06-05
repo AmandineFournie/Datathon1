@@ -211,7 +211,7 @@ elif selected == '📈 KPI 📈':
         col1, col2 = st.columns(2, gap="large")
 
         with col1:
-                plotA = px.bar(musiques_per_decade, x='decade', y='nombre_musiques', 
+                plotA = px.bar(musiques_per_decade, x='decade', y='count', 
                 labels={'decade': 'Décennie', 'nombre_musiques': 'Nombre de musiques'})
                 plotA.update_layout(
                     title='Nombre de morceaux par décennie',
